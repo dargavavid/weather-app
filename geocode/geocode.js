@@ -8,7 +8,7 @@ const encodeUserInput = (userInput) => {
 
 const geocodeAddress = (address, callback) => {
     request({
-        url: `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeUserInput(address)}`,
+        url: `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeUserInput(address)}&key=AIzaSyB272yf7oIMjlXPJqgSFMIwC3NyTWl6h68`,
         json: true// Return as object.
     }, (error, response, body) => {
         console.log(body)
