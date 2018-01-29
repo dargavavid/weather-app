@@ -1,6 +1,5 @@
-const request = require('request');
 const yargs = require('yargs');
-
+const geocode = require('./geocode/geocode.js');
 
 const argv = yargs
     .options({
@@ -15,11 +14,4 @@ const argv = yargs
     .alias('help', 'h')
     .argv;
 
-const encodeUserInput = (userInput) => {
-    const address = userInput.address;
-    const encodedAddress = encodeURIComponent(address);
-    return encodedAddress;
-};
-
-console.log(encodeUserInput(argv));
-
+geocode.geocodeAddress(argv.a);
