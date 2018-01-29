@@ -11,7 +11,7 @@ const geocodeAddress = (address, callback) => {
         url: `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeUserInput(address)}&key=AIzaSyB272yf7oIMjlXPJqgSFMIwC3NyTWl6h68`,
         json: true// Return as object.
     }, (error, response, body) => {
-        console.log(body)
+        // console.log(body);
         if (error) {
             callback('Unable to connect to Google servers');
         } else if (body.status === 'ZERO_RESULTS') {

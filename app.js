@@ -14,21 +14,16 @@ const argv = yargs
     .alias('help', 'h')
     .argv;
 
-geocode.geocodeAddress(argv.a, (errorMessage, results) => {
+geocode.geocodeAddress(argv.address, (errorMessage, results) => {
     if (errorMessage) {
         console.log(errorMessage);
     } else {
-        console.log(JSON.stringify(results, undefined, 2));
+        weather.weatherForecast(results.latitude, results.longitude, (errorMessage, result) => {
+            if (errorMessage) {
+                console.log(errorMessage);
+            }else {
+                console.log(`It's ${result.currentTemperature} at some place, but it feels like ${result.apparentTemperature}`);
+            }
+        });
     }
 });
-
-// weather.weatherForecast(42.3601, -71.0589, (errorMessage, result) => {
-//     if (errorMessage) {
-//         console.log(errorMessage);
-//     }else {
-//         console.log(`It's ${result.currentTemperature} at some place, but it feels like ${result.apparentTemperature}`);
-//     }
-// });
-
-// const apiURL = `https://api.darksky.net/forecast/027984ccbff33c2bcb2768518efc97dd/${lat},${lng}`;
-// 027984ccbff33c2bcb2768518efc97dd
