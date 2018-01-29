@@ -22,11 +22,11 @@ const argv = yargs
 //     }
 // });
 
-weather.weatherForecast(42.3601, -71.0589, (error, result) => {
-    if (error) {
-        console.log(error);
+weather.weatherForecast(42.3601, -71.0589, (errorMessage, result) => {
+    if (errorMessage) {
+        console.log(errorMessage);
     }else {
-        console.log(result.currently.temperature);
+        console.log(`It's ${result.currentTemperature} at some place, but it feels like ${result.apparentTemperature}`);
     }
 });
 

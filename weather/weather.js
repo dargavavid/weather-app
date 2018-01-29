@@ -6,7 +6,10 @@ const weatherForecast = (lat, lng, callback) => {
         json: true// Return as object.
     }, (error, response, body) => {
         if (!error && response.statusCode === 200) {
-            callback(undefined, body);
+            callback(undefined, {
+                currentTemperature: body.currently.temperature,
+                apparentTemperature: body.currently.apparentTemperature
+            });
         } else {
             callback('Unable to fetch weather.');
         }
