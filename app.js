@@ -14,3 +14,12 @@ const argv = yargs
     .help()
     .alias('help', 'h')
     .argv;
+
+const encodeUserInput = (userInput) => {
+    const address = userInput.address;
+    const encodedAddress = encodeURIComponent(address);
+    return encodedAddress;
+};
+
+console.log(encodeUserInput(argv));
+
