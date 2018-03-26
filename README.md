@@ -11,3 +11,4 @@ This is a very simple node.js application, that uses the Google Geocode API and 
 ```
 node app.js --address="00000, Some place"
 ```
+where "00000" stands in for the zipcode and "Some place" for the name of the queried location.
