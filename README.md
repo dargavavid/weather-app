@@ -6,9 +6,8 @@ This is a very simple node.js application, that uses the Google Geocode API and 
 
 ## How to use
 1. Navigate into root directory using terminal/console, then type **npm install** or **yarn install** (Linux users may have to prefix the command with *sudo* like this: *sudo npm install*). 
-2. Requests can be made using the following syntax:
+2. Requests can be made using the following syntax (where "00000" stands in for the zipcode and "Some place" for the name of the queried location):
 
 ```
 node app.js --address="00000, Some place"
 ```
-where "00000" stands in for the zipcode and "Some place" for the name of the queried location.
